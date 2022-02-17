@@ -2,19 +2,34 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Neill Verreynne</Authors>
+    <Company>Remnant Software</Company>
+    <PackageIcon>Remnant.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/RemnantSoftware/Remnant.Dependency.CastleWindsor</RepositoryUrl>
+    <Copyright>© 2022 by Neill Verreynne</Copyright>
+    <PackageTags>container;inject;dependency;transient;singleton;injection;pull;global;castle;windsor</PackageTags>
+    <Description>Castle Windsor dependency injection adapter</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Castle.Windsor" Version="5.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Remnant.Dependency.Interface\Remnant.Dependency.Interface.csproj" />
+    <PackageReference Include="Remnant.Dependency.Injector" Version="1.0.2" />
+    <PackageReference Include="Remnant.Dependency.Interface" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="LICENSE">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Remnant.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
