@@ -37,19 +37,36 @@ namespace Remnant.Dependency.CastleWindsor
 
 		public IContainer Register<TType>(TType instance) where TType : class
 		{
-			_container.Register(Component.For<TType>().Instance(instance));
+			_container.Register(
+					Component.For<TType>()
+						.ImplementedBy(instance.GetType())
+						.Instance(instance)
+						.LifestyleSingleton());
+
 			return this;
 		}
 
 		public IContainer Register(object instance)
 		{
-			_container.Register(Component.For().Instance(instance));
+			_container.Register(
+					Component.For(instance.GetType())
+						.ImplementedBy(instance.GetType())
+						.Instance(instance)
+						.LifestyleSingleton());
+
 			return this;
 		}
 
 		public IContainer Register<TType>() where TType : class, new()
 		{
-			_container.Register(Component.For<TType>().Instance(new TType()));
+			var instance = new TType();
+
+			_container.Register(
+				Component.For<TType>()
+					.ImplementedBy(instance.GetType())
+					.Instance(instance)
+					.LifestyleSingleton());
+
 			return this;
 		}
 
@@ -57,7 +74,14 @@ namespace Remnant.Dependency.CastleWindsor
 			where TType : class
 			where TObject : class, new()
 		{
-			_container.Register(Component.For<TType>().Instance(new Object() as TType));
+			var instance = new TObject() as TType;
+
+			_container.Register(
+				Component.For<TType>()
+					.ImplementedBy(instance.GetType())
+					.Instance(instance)
+					.LifestyleSingleton());
+
 			return this;
 		}
 
