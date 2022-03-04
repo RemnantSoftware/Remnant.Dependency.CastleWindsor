@@ -7,7 +7,7 @@ Castle windsor dependency injection adapter
 
 ## Nuget package:
 
-        Install-Package Remnant.Dependency.CastleWindsor -Version 1.0.0
+        Install-Package Remnant.Dependency.CastleWindsor -Version 1.0.1
         
 ```csharp
 var castle = new WindsorContainer();
