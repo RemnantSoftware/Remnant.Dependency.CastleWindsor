@@ -11,13 +11,12 @@
     <Copyright>© 2022 by Neill Verreynne</Copyright>
     <PackageTags>container;inject;dependency;transient;singleton;injection;pull;global;castle;windsor</PackageTags>
     <Description>Castle Windsor dependency injection adapter</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-		<PackageReference Include="Remnant.Dependency.Injector" Version="1.0.3" />
     <PackageReference Include="Castle.Windsor" Version="5.1.1" />
-    <PackageReference Include="Remnant.Dependency.Interface" Version="1.0.0" />
+    <PackageReference Include="Remnant.Dependency.Interface" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
