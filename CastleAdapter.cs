@@ -100,5 +100,13 @@ namespace Remnant.Dependency.CastleWindsor
 		{
 			return _container.Resolve<TType>();
 		}
+
+		public TContainer InternalContainer<TContainer>() where TContainer : class
+		{
+			if (_container as TContainer == null)
+				throw new InvalidCastException($"The internal container is of type {_container.GetType().FullName} and cannot be cast to {typeof(TContainer).FullName}");
+
+			return _container as TContainer;
+		}
 	}
 }
